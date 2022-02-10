@@ -1,0 +1,22 @@
+ALGORITHM task5
+VAR
+equation:STRING
+i :INTEGER
+valid,invalid:BOOLEAN
+BEGIN
+invalid:=true;
+
+    FOR i FROM 1 TO equation.length STEP i=i+1  DO
+        SWITCH (equation[i]) DO
+            case "+","-","/","*","(",")": valid:=true
+            case "0","1","2","3","4","5","6","7","8","9": valid:=true
+              
+            default : invalid:=false 
+        END_SWITCH
+    END_FOR
+    IF (valid=invalid) THEN
+        write (equation," cette equation est valide");
+    ELSE
+        write (equation," cette equation n'est pas valide");
+   END_IF
+END

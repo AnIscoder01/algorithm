@@ -1,0 +1,53 @@
+ALGORITHM task3
+VAR
+    day,year, inpdate,monthnm,datnum  : INTEGER
+    month : STRING
+   
+BEGIN
+day := inpdate%100
+monthnm := (inpdate/100)%100
+year := inpdate/100
+
+IF (day>31 or day<1) THEN
+    write("day error")
+END_IF
+IF (monthnm>12 or monthnm <1 ) THEN
+    write("month error ")
+END_IF
+
+
+SWITCH (monthnm) DO
+    case 1,3,5,7,8,10,12 : datnum:=31
+    case 4,6,9,11 : datnum:=30
+    case 2 :    IF (year%4=0) THEN
+                     datnum:=29
+                ELSE 
+                    datnum:=28
+                END_IF
+END_SWITCH
+
+
+SWITCH (monthnm) DO
+    case 1 : month="janvier"
+    case 2 : month="fevrier"
+    case 3 : month="mars"
+    case 4 : month="avril"
+    case 5 : month="mai"
+    case 6 : month="juin"
+    case 7 : month="juillet"
+    case 8 : month="aout"
+    case 9 : month="septembre"
+    case 10 : month="octobre"
+    case 11 : month="novembre"
+    case 12 : month="decembre"
+END_SWITCH
+
+
+write("day: ",day)
+
+write("Month :",month)
+
+write("year :",year+2000)
+
+
+END

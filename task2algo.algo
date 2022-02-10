@@ -1,0 +1,30 @@
+ALGORITHM task2
+VAR
+    day,km:INTEGER
+   rate1,rate2,costday:FLOAT
+
+   p_d : INTEGER := 100
+   ins : FLOAT := 0.3;
+   VAT : FLOAT := 0.18
+BEGIN
+    read(km)
+    read(day)
+    costday=day*(ins+p_d)*1.18
+    
+
+    IF (km<101) THEN
+        rate1:=0.7*km
+    ELSE_IF (km<1001) THEN
+        rate1 :=0,7*km+(km-100)*0,4
+    ELSE
+        rate1 :=0,7*km+km*0,4+(km-1000)0,2
+    END_IF
+    costkm:=(rate1+(ins*day))*1.18
+    IF (costday<costkm) THEN
+         write("formule par jour",costday)
+    ELSE
+   
+    write("formule par kilomitrage",costkm  )
+    
+    END_IF
+END

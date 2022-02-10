@@ -1,0 +1,12 @@
+ALGORITHM permute
+VAR
+    x,y,z,aux :INTEGER
+BEGIN
+    aux:=x
+    x:=y
+    y:=z
+    z:=aux
+END
+
+
+
